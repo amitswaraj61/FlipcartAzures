@@ -18,5 +18,15 @@ namespace FlipcartAzures.FlipcartTest
             login.LoginPage(ConfigurationManager.AppSettings["email"], ConfigurationManager.AppSettings["password"]);
             Assert.AreEqual("My Account", login.Validate());
         }
+
+        [Test, Order(2)]
+        public void SearchProduct()
+        {
+            Home home = new Home(driver);
+            home.SearchProduct();
+            Assert.AreEqual("BUY NOW", home.Validate());
+
+
+        }
     }
 }
