@@ -1,15 +1,10 @@
 ﻿using FlipcartAzures.Pages;
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FlipcartAzures.FlipcartTest
 {
-   public class Test : Base
+    public class Test : Base
     {
         [Test, Order(1)]
         public void LoginTest()
@@ -33,7 +28,13 @@ namespace FlipcartAzures.FlipcartTest
             ShoppingCart cart = new ShoppingCart(driver);
             cart.AddToCart();
             Assert.AreEqual("UPI (PhonePe / Paytm / Google Pay)", cart.Validate());
+        }
 
+        [Test, Order(4)]
+        public void LogoutTest()
+        {
+            Logout logout = new Logout(driver);
+            logout.LogoutFromFlipkart();
         }
     }
 }
