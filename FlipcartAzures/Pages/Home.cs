@@ -27,7 +27,7 @@ namespace FlipcartAzures.Pages
         public IWebElement ClickOnProduct;
 
         [FindsBy(How = How.XPath, Using = "//body/div[@id='container']/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/form[1]/button[1]")]
-        IWebElement validation;
+        public IWebElement validation;
 
         public void SearchProduct()
         {

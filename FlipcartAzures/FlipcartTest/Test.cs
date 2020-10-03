@@ -25,7 +25,14 @@ namespace FlipcartAzures.FlipcartTest
             Home home = new Home(driver);
             home.SearchProduct();
             Assert.AreEqual("BUY NOW", home.Validate());
+        }
 
+        [Test, Order(3)]
+        public void ShoppingCartTest()
+        {
+            ShoppingCart cart = new ShoppingCart(driver);
+            cart.AddToCart();
+            Assert.AreEqual("UPI (PhonePe / Paytm / Google Pay)", cart.Validate());
 
         }
     }
